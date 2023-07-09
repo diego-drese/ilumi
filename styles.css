@@ -12,8 +12,8 @@ body{
 }
 
 .card {
-    width: 8rem;
-    height: 8rem;
+    width: 90%;
+    height: 45%;
     border: solid 1px #E5E7EB; /* Cor das bordas */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adicione esta linha para a sombra */
     border-radius: 12px;
