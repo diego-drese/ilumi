@@ -272,6 +272,7 @@ function endGame(finished) {
 function restartGame() {
     document.getElementById('start-modal').classList.remove('hidden');
     document.getElementById('game-over-modal').classList.add('hidden');
+    document.querySelector('.level-options button').classList.remove('selected');
     gameArea.innerHTML = '';
 
     // Resetar variáveis globais
