@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="confetti">
+<div class="container mx-auto">
+    <!-- Modal de Início -->
+    <div id="start-modal" class="modal">
+        <div class="modal-content">
+            <h2 class="text-2xl font-bold text-center">Bem-vindo ao Jogo da Memória!</h2>
+            <p>Digite seu e-mail e selecione um nível:</p>
+            <form id="email-form" class="flex justify-center mt-4">
+                <input type="email" id="email-input" class="p-2 rounded-l-md" placeholder="Digite seu e-mail" required>
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-r-md">Iniciar</button>
+            </form>
+            <div class="level-options">
+                <button id="easy-level" class="bg-green-500 text-white px-4 py-2 rounded-md">Fácil</button>
+                <button id="medium-level" class="bg-green-500 text-white px-4 py-2 rounded-md">Médio</button>
+                <button id="hard-level" class="bg-green-500 text-white px-4 py-2 rounded-md">Difícil</button>
+            </div>
+            <div class="modal-overlay"></div>
+        </div>
+    </div>
+
+    <!-- Modal de Finalização -->
+    <div id="game-over-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="game-over-title" class="text-2xl font-bold text-center"></h2>
+            <p class="text-center mt-2" id="moves-count"></p>
+            <p class="text-center mt-2" id="match-pairs"></p>
+            <button id="restart-btn" class="bg-green-500 text-white px-4 py-2 rounded-md mt-4">Reiniciar</button>
+            <div class="modal-overlay"></div>
+        </div>
+    </div>
+    <div class="game-header">
+        <div id="timer" class="text-white text-4xl font-bold bg-gray-800 p-2 rounded-md animate-float animation">00:00</div>
+        <div id="logo">
+            <img src="/logo-ilumi-branco.webp" alt="Logo" />
+        </div>
+        <div id="moves" class="text-white text-4xl font-bold bg-gray-800 p-2 rounded-md animate-float animation">0</div>
+    </div>
+
+    <div id="countdown">
+        <div class="numbers-container">
+            <div class="number" id="number-3">3</div>
+            <div class="number" id="number-2">2</div>
+            <div class="number" id="number-1">1</div>
+            <div class="number" id="number-0">0</div>
+        </div>
+    </div>
+    <div id="game-area" class="flex flex-wrap justify-center mt-8"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
