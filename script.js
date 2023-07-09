@@ -175,9 +175,7 @@ function startCountdown() {
         delay: anime.stagger(1000),
         complete: () => {
             // Iniciar o timer após a animação dos números
-            document.getElementById('countdown').style.display = 'none';
             startTimer();
-
         },
     });
 
@@ -243,6 +241,7 @@ function startTimer() {
     });
     gameStarted = true;
     infoAnimation(true);
+    document.getElementById('countdown').style.display = 'none';
 }
 
 // Função auxiliar para adicionar um zero à esquerda dos números menores que 10
