@@ -1,17 +1,17 @@
 // Variáveis globais
-let userEmail = '';
-let selectedLevel = '';
-let gameStarted = false;
+let userEmail           = '';
+let selectedLevel       = '';
+let gameStarted         = false;
 let gameTimer;
-let movesCount = 0;
-let totalPairs = 0;
-let matchedPairs = 0;
-let gameArea = document.getElementById('game-area');
+let movesCount          = 0;
+let totalPairs          = 0;
+let matchedPairs        = 0;
+let gameArea            = document.getElementById('game-area');
 
-let movesDisplay = document.getElementById('moves');
-let movesCountDisplay = document.getElementById('moves-count');
-let matchPairsDisplay = document.getElementById('match-pairs');
-let timerDisplay = document.getElementById('timer');
+let movesDisplay        = document.getElementById('moves');
+let movesCountDisplay   = document.getElementById('moves-count');
+let matchPairsDisplay   = document.getElementById('match-pairs');
+let timerDisplay        = document.getElementById('timer');
 
 // Array com os nomes dos produtos
 const productList = [
@@ -26,7 +26,7 @@ const productList = [
         image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/16545.png'
     },{
         name: 'Produto 4',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/16545.png'
+        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/1792x.png'
     },{
         name: 'Produto 5',
         image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/16519.png'
@@ -150,7 +150,6 @@ function createCards() {
                             });
                         }, 500);
                     }
-
                     movesCount++;
                     movesDisplay.textContent = movesCount;
                 }
@@ -163,6 +162,7 @@ function createCards() {
     });
     startCountdown();
 }
+
 // Função para iniciar a contagem regressiva
 function startCountdown() {
     document.getElementById('countdown').style.display = 'block';
@@ -174,11 +174,9 @@ function startCountdown() {
         easing: 'easeOutExpo',
         delay: anime.stagger(1000),
         complete: () => {
-            // Iniciar o timer após a animação dos números
             startTimer();
         },
     });
-
 }
 
 // Função para iniciar o jogo
@@ -198,14 +196,14 @@ function startGame() {
             totalPairs = 8;
     }
 
-    gameStarted = true;
-    movesCount = 0;
-    matchedPairs = 0;
+    gameStarted     = true;
+    movesCount      = 0;
+    matchedPairs    = 0;
     document.getElementById('start-modal').classList.add('hidden');
     document.getElementById('game-over-modal').classList.add('hidden');
     createCards();
 }
-// funcao para animar o timer e os moimentos
+// funcao para animar o timer e os movimentos
 function infoAnimation(start){
     if(start){
         document.getElementById('timer').classList.add('info-animation');
@@ -215,20 +213,18 @@ function infoAnimation(start){
         document.getElementById('moves').classList.remove('info-animation');
     }
 }
+
 // Função para iniciar o temporizador
 function startTimer() {
     let seconds = 60;
-
     if (!timerDisplay) {
         console.error("Elemento 'timer' não encontrado no HTML.");
         return;
     }
-
     gameTimer = setInterval(() => {
         const minutes = Math.floor(seconds / 60);
         const remainingSeconds = seconds % 60;
         timerDisplay.textContent = `${padZero(minutes)}:${padZero(remainingSeconds)}`;
-
         seconds--;
         if (seconds < 0) {
             clearInterval(gameTimer);
@@ -253,11 +249,9 @@ function padZero(number) {
 function endGame(finished) {
     clearInterval(gameTimer);
     gameStarted = false;
-
     document.getElementById('game-over-modal').classList.remove('hidden');
     movesCountDisplay.textContent = `Número de movimentos: ${movesCount}`;
     matchPairsDisplay.textContent = `Pares encontrados: ${matchedPairs}`;
-
     if (finished) {
         document.getElementById('game-over-title').textContent = 'Parabéns!';
         window.confettiful.startConfetti();
@@ -275,14 +269,14 @@ function restartGame() {
     gameArea.innerHTML = '';
 
     // Resetar variáveis globais
-    userEmail = '';
-    selectedLevel = '';
-    gameStarted = false;
-    movesCount = 0;
-    totalPairs = 0;
-    matchedPairs = 0;
-    timerDisplay.textContent='00:00';
-    movesDisplay.textContent=movesCount;
+    userEmail               = '';
+    selectedLevel           = '';
+    gameStarted             = false;
+    movesCount              = 0;
+    totalPairs              = 0;
+    matchedPairs            = 0;
+    timerDisplay.textContent= '00:00';
+    movesDisplay.textContent= movesCount;
     window.confettiful.stopConfetti();
 }
 
@@ -318,9 +312,6 @@ document.getElementById('email-form').addEventListener('submit', (e) => {
     }
 });
 
-// Adicionar evento de clique no botãoDesculpe novamente pelo corte no código. Aqui está o restante:
-
-
 // de reiniciar na modal de encerramento
 document.getElementById('restart-btn').addEventListener('click', () => {
   restartGame();
@@ -333,7 +324,6 @@ showStartModal();
 const Confettiful = function(el) {
     this.el = el;
     this.containerEl = null;
-
     this.confettiFrequency = 3;
     this.confettiColors = ['#EF2964', '#00C09D', '#2D87B0', '#48485E','#EFFF1D'];
     this.confettiAnimations = ['slow', 'medium', 'fast'];
@@ -345,15 +335,11 @@ const Confettiful = function(el) {
 Confettiful.prototype._setupElements = function() {
     const containerEl = document.createElement('div');
     const elPosition = this.el.style.position;
-
     if (elPosition !== 'relative' || elPosition !== 'absolute') {
         this.el.style.position = 'relative';
     }
-
     containerEl.classList.add('confetti-container');
-
     this.el.appendChild(containerEl);
-
     this.containerEl = containerEl;
 };
 
@@ -366,10 +352,10 @@ Confettiful.prototype._renderConfetti = function() {
         const confettiAnimation = this.confettiAnimations[Math.floor(Math.random() * this.confettiAnimations.length)];
 
         confettiEl.classList.add('confetti', 'confetti--animation-' + confettiAnimation);
-        confettiEl.style.left = confettiLeft;
-        confettiEl.style.width = confettiSize;
-        confettiEl.style.height = confettiSize;
-        confettiEl.style.backgroundColor = confettiBackground;
+        confettiEl.style.left               = confettiLeft;
+        confettiEl.style.width              = confettiSize;
+        confettiEl.style.height             = confettiSize;
+        confettiEl.style.backgroundColor    = confettiBackground;
 
         confettiEl.removeTimeout = setTimeout(function() {
             confettiEl.parentNode.removeChild(confettiEl);
@@ -378,20 +364,22 @@ Confettiful.prototype._renderConfetti = function() {
         this.containerEl.appendChild(confettiEl);
     }, 25);
 };
+
 Confettiful.prototype.startConfetti = function() {
     this.containerEl.style.display= 'block';
-    if (this.confettiInterval) return; // Verifica se o confete já está em andamento
-
+    if (this.confettiInterval){
+        return;
+    }
     this._renderConfetti();
 };
 
 Confettiful.prototype.stopConfetti = function() {
     this.containerEl.style.display= 'none';
-    if (!this.confettiInterval) return; // Verifica se o confete não está em andamento
-
+    if (!this.confettiInterval){
+        return;
+    }
     clearInterval(this.confettiInterval);
     this.confettiInterval = null;
-
     // Remove os confetes restantes
     const confettiElements = this.containerEl.querySelectorAll('.confetti');
     confettiElements.forEach((confettiEl) => {
