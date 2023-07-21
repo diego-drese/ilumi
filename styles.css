@@ -103,8 +103,8 @@ body{
 }
 #startGame {
     background: url(/tela_inicial_jogo_memoria_construsul.jpg) no-repeat center;
-    width: 1080px;
-    height: 1920px;
+    width: 100vw;
+    height: 100vh;
     background-size: contain;
 
 
