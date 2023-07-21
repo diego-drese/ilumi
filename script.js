@@ -16,69 +16,30 @@ let timerDisplay        = document.getElementById('timer');
 // Array com os nomes dos produtos
 const productList = [
     {
-        name: 'Produto 1',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/1757.png'
+        name: 'Benjamin',
+        image: '/carta_benjamin_ilumi.jpg'
     },{
-        name: 'Produto 2',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/16511.png'
+        name: 'Flex',
+        image: '/carta_flex_ilumi.jpg'
     },{
-        name: 'Produto 3',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/16545.png'
+        name: 'Lançamentos',
+        image: '/carta_lancamentos_ilumi.jpg'
     },{
-        name: 'Produto 4',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/1792x.png'
+        name: 'Mix',
+        image: '/carta_mix_ilumi.jpg'
     },{
-        name: 'Produto 5',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/16519.png'
+        name: 'Monobloco',
+        image: '/carta_monobloco_ilumi.jpg'
     },{
-        name: 'Produto 6',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/63201.png'
+        name: 'Pensou',
+        image: '/carta_pensou_ilumi.jpg'
     },{
-        name: 'Produto 7',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/63121.png'
+        name: 'Stylus',
+        image: '/carta_stylus_ilumi.jpg'
     },{
-        name: 'Produto 8',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/63141.png'
-    },{
-        name: 'Produto 9',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/6322.png'
-    },{
-        name: 'Produto 10',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/84141.png'
-    },{
-        name: 'Produto 11',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/84201.png'
-    },{
-        name: 'Produto 12',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/2023/01/IL0011.webp'
-    },{
-        name: 'Produto 13',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/2023/01/IL0007.webp'
-    },{
-        name: 'Produto 14',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/2023/01/IL0006.webp'
-    },{
-        name: 'Produto 15',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/2023/01/IL0023.png'
-    },{
-        name: 'Produto 16',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/2023/01/IL0022.png'
-    },{
-        name: 'Produto 17',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/620662.png'
-    },{
-        name: 'Produto 18',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/6206521.png'
-    },{
-        name: 'Produto 19',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/6206531.png'
-    },{
-        name: 'Produto 20',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/6206641.png'
-    },{
-        name: 'Produto 21',
-        image: 'https://i0.wp.com/www.ilumi.com.br/wp-content/uploads/produtos-imgs/0413029.png'
-    },
+        name: 'Vivaz',
+        image: '/carta_vivaz_ilumi.jpg'
+    }
 
 ];
 
@@ -181,21 +142,8 @@ function startCountdown() {
 
 // Função para iniciar o jogo
 function startGame() {
-    userEmail = document.getElementById('email-input').value;
-    switch (selectedLevel) {
-        case 'easy-level':
-            totalPairs = 6;
-            break;
-        case 'medium-level':
-            totalPairs = 8;
-            break;
-        case 'hard-level':
-            totalPairs = 10;
-            break;
-        default:
-            totalPairs = 8;
-    }
-
+    userEmail       = null;
+    totalPairs      = 8;
     gameStarted     = true;
     movesCount      = 0;
     matchedPairs    = 0;
@@ -265,7 +213,6 @@ function endGame(finished) {
 function restartGame() {
     document.getElementById('start-modal').classList.remove('hidden');
     document.getElementById('game-over-modal').classList.add('hidden');
-    document.querySelector('.level-options button').classList.remove('selected');
     gameArea.innerHTML = '';
 
     // Resetar variáveis globais
@@ -302,14 +249,9 @@ document.querySelectorAll('.level-options button').forEach((btn) => {
 });
 
 // Adicionar evento de envio do formulário na modal de início
-document.getElementById('email-form').addEventListener('submit', (e) => {
+document.getElementById('startGame').addEventListener('click', (e) => {
     e.preventDefault();
-    if (selectedLevel) {
-        startGame();
-    } else {
-        // Exibir mensagem de seleção de nível
-        alert('Por favor, selecione um nível antes de iniciar o jogo.');
-    }
+    startGame();
 });
 
 // de reiniciar na modal de encerramento

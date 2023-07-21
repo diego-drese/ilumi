@@ -1,5 +1,6 @@
 body{
-    background: #00913C;
+    background: url("/fundo_jogo_memoria_construsul.jpg");
+    background-size: cover;
     overflow: hidden;
 }
 #game-area {
@@ -8,33 +9,21 @@ body{
     grid-gap: 16px; /* Espaçamento entre os cards */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
+    margin-top: 10vh;
 }
 
 .card {
     width: 90%;
-    height: 45%;
-    border: solid 1px #E5E7EB; /* Cor das bordas */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adicione esta linha para a sombra */
-    border-radius: 12px;
+    height: 88%;
+    border: solid 1px #E5E7EB;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
     margin: 8px;
     cursor: pointer;
     perspective: 600px;
-    background-color:#556;
-    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a),
-    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
-    background-size: 40px 70px;
-    background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
-
-    background:
-            radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
-            radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
-            #00913C;
-    background-size: 20px 20px;
+    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-size: 16px 16px;
 }
 
 .card .card-inner {
@@ -62,7 +51,7 @@ body{
 }
 
 .card .card-front {
-    background-color: #ffffff;
+    background-color: #000;
     border-radius: 12px;
 }
 
@@ -109,11 +98,17 @@ body{
     background-color: #fff;
     padding: 2rem;
     border-radius: 8px;
-
     text-align: center;
     position: relative;
 }
+#startGame {
+    background: url(/tela_inicial_jogo_memoria_construsul.jpg) no-repeat center;
+    width: 1080px;
+    height: 1920px;
+    background-size: contain;
 
+
+}
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -194,14 +189,15 @@ body{
     width: 100%;
 }
 .card .card-front::after {
-    content: "ILUMI";
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    background:url(/carta_capa_ilumi.jpg);
+    background-size:cover;
     font-size: 2rem;
     font-weight: 800;
-    color: rgba(0, 145, 60, 0.7); /* Cor da marca d'água */
+    color: rgba(0, 145, 60, 0.7);
+    width: 100%;
+    height: 100%;
     pointer-events: none; /* Impede que a marca d'água seja clicável */
 }
 
@@ -393,41 +389,24 @@ body{
 .level-options .selected{
     background: #eb3737cc;
 }
-#game-area .selected{
-    background-color:#556;
-    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a),
-    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
-    background-size: 40px 70px;
-    background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
-}
-.card .card-inner{
-    background-color:#556;
-    background-image: linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(30deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(150deg, #445 12%, transparent 12.5%, transparent 87%, #445 87.5%, #445),
-    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a),
-    linear-gradient(60deg, #99a 25%, transparent 25.5%, transparent 75%, #99a 75%, #99a);
-    background-size: 40px 70px;
-    background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
-}
+
 #game-area .selected{
     background:
-            radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
-            radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
-            #00913C;
-    background-size: 20px 20px;
+            radial-gradient(black 15%, transparent 16%) 0 0,
+            radial-gradient(black 15%, transparent 16%) 8px 8px,
+            radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+            radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:#282828;
+    background-size:16px 16px;
 }
 .card .card-inner{
     background:
-            radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
-            radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
-            #00913C;
-    background-size: 20px 20px;
+            radial-gradient(black 15%, transparent 16%) 0 0,
+            radial-gradient(black 15%, transparent 16%) 8px 8px,
+            radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+            radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+    background-color:#282828;
+    background-size:16px 16px;
 }
 .card.matched::after {
     content: '';
