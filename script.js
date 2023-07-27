@@ -164,7 +164,7 @@ function infoAnimation(start){
 
 // Função para iniciar o temporizador
 function startTimer() {
-    let seconds = 60;
+    let seconds = 35;
     if (!timerDisplay) {
         console.error("Elemento 'timer' não encontrado no HTML.");
         return;
