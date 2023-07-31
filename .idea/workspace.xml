@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52f88741-9fcc-4bfb-ab6e-3279a1d1e587" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/anime.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logo-ilumi-branco.webp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +77,8 @@
       <workItem from="1688757217617" duration="32399000" />
       <workItem from="1689365633590" duration="4000" />
       <workItem from="1689948188484" duration="8512000" />
-      <workItem from="1690479360647" duration="70000" />
+      <workItem from="1690479360647" duration="3603000" />
+      <workItem from="1690809435697" duration="159000" />
     </task>
     <servers />
   </component>
